@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">   
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+    
+<body>
+    <h3>Laboratory work 2</h3>
+
+    <form>
+        <p>Title</p>
+        <input type="text" id="item-input" ><br>
+        <p>Description</h2><br>
+        <textarea id="item-input" ></textarea><br>
+        <button type="button" onclick="addItem()">Add Item</button>
+        <button type="button" onclick="clearItem()">Clear List</button>
+      </form>
+    
+
+    <h2>Your Items</h2>
+    <ul id="item-list">
+    </ul>
+
+  
+    <script>
+    function addItem() {
+    var itemInput = document.getElementById("item-input");
+    var descriptionInput = document.getElementById("item-input");
+    var itemList = document.getElementById("item-list");
+
+    var newItemText = itemInput.value.trim();
+    var newDescription = descriptionInput.value.trim();
+
+    if (newItemText === "") {
+        alert("Please enter an item.");
+    } else {
+       
+        var newItem = document.createElement("li");
+        newItem.textContent = newItemText;
+
+       
+        var description = document.createElement("span");
+        description.textContent = newDescription;
+
+       
+        newItem.appendChild(description);
+        itemList.appendChild(newItem);
+
+        
+        itemInput.value = "";
+    }
+}
+
+function clearItem() {
+    var itemList = document.getElementById("item-list");
+    while (itemList.firstChild) {
+        itemList.removeChild(itemList.firstChild);
+    }
+}
+</script>
+
+    </script>
+    <footer class="footer-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; Lab 2 Kairbolatkyzy Rakhila</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.js"></script>
+
+</body>
+</html>
